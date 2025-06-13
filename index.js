@@ -16,6 +16,7 @@ app.use(cors({
 app.use(express.json());
 
 app.post('/contact', async (req, res) => {
+    console.log("Incoming data:", req.body);
   const { name, email, subject, message } = req.body;
 
   const transporter = nodemailer.createTransport({
