@@ -16,7 +16,6 @@ app.use(cors({
 app.use(express.json());
 
 app.post('/contact', async (req, res) => {
-    console.log("Incoming data:", req.body);
   const { name, email, subject, message } = req.body;
 
   const transporter = nodemailer.createTransport({
@@ -52,3 +51,4 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
